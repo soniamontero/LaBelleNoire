@@ -1,0 +1,13 @@
+<h1>All items</h1>
+
+<%= link_to "Add a new article", new_article_path %>
+
+<div class="article-card">
+<% @articles.each do |article| %>
+<%= article.name %>
+<%= article.price %>
+<%= link_to 'SEE MORE', article_path(article) %>
+</div>
+
+<% end %>
+
