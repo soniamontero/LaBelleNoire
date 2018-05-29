@@ -1,3 +1,38 @@
-<p>L'aventure donc</p>
+<div class="banner-image">
+  <div class="banner-content">
+
+    <% if alert %>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+        <strong>Warning!</strong><%= alert %>
+      </div>
+      <% end %>
+
+      <h1>L'aventure donc</h1>
 
       <%= link_to 'All the articles', articles_path %>
+
+    </div>
+  </div>
+
+<div class="second-section">
+
+<div class="container">
+  <div class="row">
+    <% @articles.each do |article| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+
+      <div class="card-product mx-auto">
+
+        <div class="details">
+        <%= article.name %>
+        <%= article.price %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
+
+</div>

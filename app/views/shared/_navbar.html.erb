@@ -1,18 +1,26 @@
 <div class="navbar-container">
+  <div class="navbar-content">
 
-<div>
-  <%= link_to 'Articles', articles_path %>
-</div>
+    <div id='nav-left'>
+      <%= link_to 'Bracelets', articles_path, id: 'first-item' %>
+      <%= link_to 'Rings', articles_path, id: 'second-item' %>
+      <%= link_to 'Necklaces', articles_path, id: 'third-item' %>
 
-<div>
-  La Belle Noire
-</div>
+    </div>
 
-<div>
-  <% if current_user %>
-  <%= link_to 'Log Out', destroy_user_session_path %>
-  <% else %>
-  <%= link_to 'Sign In', new_user_session_path %>
-  <% end %>
-</div>
+    <div id='nav-center'>
+      <%= link_to 'La Belle Noire', root_path, class: 'logo' %>
+    </div>
+
+    <div id='nav-right'>
+      <% if current_user %>
+      <%= link_to 'Log Out', destroy_user_session_path %>
+      <% else %>
+      <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
+
+      <%= link_to( image_tag("shopping-bag.png"), articles_path, id: "shopping-cart") %>
+    </div>
+
+  </div>
 </div>
